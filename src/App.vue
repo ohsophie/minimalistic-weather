@@ -256,6 +256,8 @@
     }
     .header {
       padding-top: 30px;
+      text-align: center;
+      font-size: 20px;
     }
     .footer {
       position: static;
