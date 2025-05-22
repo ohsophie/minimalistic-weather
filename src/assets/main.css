@@ -1,13 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
-* {
+body,
+html {
+  height: 100%;
   margin: 0;
   padding: 0;
-}
-
-body {
-  width: 100%;
-  min-height: 100vh;
   background: #2a7b9b;
   background: linear-gradient(
     145deg,
@@ -15,6 +12,13 @@ body {
     rgba(87, 199, 133, 1) 50%,
     rgba(237, 221, 83, 1) 100%
   );
+  overscroll-behavior: none;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
   font-family: Nunito;
   display: flex;
   justify-content: center;

@@ -156,6 +156,9 @@
 </template>
 
 <style scoped>
+  .app {
+    min-height: 100%;
+  }
   .header {
     color: #355240;
     display: flex;
