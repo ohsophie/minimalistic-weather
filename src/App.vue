@@ -1,5 +1,4 @@
 <script>
-  import axios from "axios";
   import Wrap from "./components/Wrap.vue";
 
   export default {
