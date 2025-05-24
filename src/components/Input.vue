@@ -68,6 +68,7 @@
     border-bottom: 2px solid #b6f2cd;
     width: 300px;
     color: #fff;
+    opacity: 1 !important;
     font-size: 16px;
     padding: 5px 8px;
     outline: none;

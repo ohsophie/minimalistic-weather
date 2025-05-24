@@ -98,21 +98,13 @@
 </template>
 
 <style scoped>
-  .header {
-    color: #355240;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    padding-top: 0;
-    margin: 10px;
-  }
-
   .wrap {
     border-radius: 25px;
     padding: 30px;
-    margin: 0px;
+    margin: 10px;
     background: rgba(195, 222, 205, 0.3);
     color: #1d6b3f;
+    align-self: center;
   }
 
   @media screen and (max-width: 650px) {
