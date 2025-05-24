@@ -111,7 +111,7 @@
     border-radius: 25px;
     padding: 30px;
     margin: 0px;
-    background: rgba(195, 222, 205, 0.4);
+    background: rgba(195, 222, 205, 0.3);
     color: #1d6b3f;
   }
 

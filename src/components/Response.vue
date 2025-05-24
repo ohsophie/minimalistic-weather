@@ -81,8 +81,8 @@
     padding-left: 25px;
   }
   .info {
-    margin-top: 15px;
-    font-size: 18pt !important;
+    margin-top: 20px;
+    font-size: 16pt !important;
   }
   .current {
     font-size: 30pt;
