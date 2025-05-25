@@ -7,8 +7,7 @@ Try my application here -> https://ohsophie.github.io/minimalistic-weather/
 ## future updates
 
 - mobile devices user experience upgrade
-- 3 day weather forecast tab
-- a graph for data visualisation will be added
+- a graph for data visualisation will look more friendly on mobile phones
 - possible bug fixes
 
 ## credits

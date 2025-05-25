@@ -1,13 +1,19 @@
 <script>
   import axios from "axios";
+
   import Input from "./Input.vue";
   import Error from "./ErrorMessage.vue";
   import Response from "./Response.vue";
+  import ThreeDays from "./ThreeDaysResponse.vue";
+  import Menu from "./Menu.vue";
+  import ChartComponent from "./Chart.vue";
 
   export default {
-    components: { Input, Error, Response },
+    components: { Input, Error, Response, ThreeDays, Menu, ChartComponent },
     data() {
       return {
+        forecastData: [],
+        task: 0,
         city: "",
         errorMes: "",
         info: null,
@@ -33,6 +39,9 @@
         this.city = readData.city;
         this.getWeather();
       },
+      readMenuStatus(status) {
+        this.task = status.active;
+      },
       async getWeather() {
         this.errorMes = "";
         this.info = null;
@@ -53,8 +62,8 @@
               },
             }
           );
-
           this.info = response.data;
+          this.forecastData = this.info.list.slice(0, 24);
           this.iconLink = `https://openweathermap.org/img/wn/${this.info.list[0].weather[0].icon}@2x.png`;
           this.date = this.getLocalDate(this.info.city.timezone);
         } catch (error) {
@@ -86,13 +95,27 @@
 
 <template>
   <div class="wrap">
+    <Menu @status="readMenuStatus" />
+    <hr />
     <Input @city="readCity" />
     <Error v-show="errorMes != ''" :error="this.errorMes" />
     <Response
-      v-if="info != null"
+      v-if="info != null && task == 0"
       :info="this.info"
       :iconLink="this.iconLink"
       :date="this.date"
+    />
+    <ThreeDays
+      v-if="info != null && task == 1"
+      :city="this.city"
+      :date="this.date"
+      :info="this.info"
+    />
+
+    <ChartComponent
+      v-if="forecastData.length"
+      v-show="task == 1"
+      :forecastData="forecastData"
     />
   </div>
 </template>
@@ -101,10 +124,16 @@
   .wrap {
     border-radius: 25px;
     padding: 30px;
+    padding-top: 5px;
     margin: 10px;
     background: rgba(195, 222, 205, 0.3);
     color: #1d6b3f;
     align-self: center;
+    width: 50dvw;
+  }
+  hr {
+    border-top: 0.5px solid #1d6b3f;
+    border-bottom: 0px;
   }
 
   @media screen and (max-width: 650px) {

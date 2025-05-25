@@ -8,15 +8,6 @@
       cityTemp() {
         return Math.floor(this.info.list[0].main.temp) + "°C";
       },
-      cityMaxMinTemp() {
-        return (
-          "Max / min temperature: " +
-          Math.floor(this.info.list[0].main.temp_max) +
-          " / " +
-          Math.floor(this.info.list[0].main.temp_min) +
-          "°C"
-        );
-      },
       cityHumidity() {
         return "Humidity: " + this.info.list[0].main.humidity + "%";
       },
@@ -34,13 +25,13 @@
         }
       },
       cityClouds() {
-        if (this.info.list[1].clouds.all == 0) {
+        if (this.info.list[0].clouds.all == 0) {
           return "Sky is clear, no clouds.";
         } else if (
-          this.info.list[1].clouds.all > 0 &&
-          this.info.list[1].clouds.all <= 30
+          this.info.list[0].clouds.all > 0 &&
+          this.info.list[0].clouds.all <= 30
         ) {
-          return "A little bit cloudy";
+          return "A little bit cloudy.";
         } else {
           return "It is cloudy.";
         }
@@ -52,10 +43,10 @@
 <template>
   <div class="response" v-if="info != null">
     <div class="info">
-      <p>{{ cityMaxMinTemp }}</p>
       <p>{{ cityHumidity }}</p>
       <p>{{ cityWindSpeed }}</p>
       <p>{{ cityPressure }}</p>
+      <br />
       <p>{{ cityClouds }}</p>
       <p>{{ cityRain }}</p>
     </div>
@@ -72,6 +63,7 @@
     color: #355240;
     display: flex;
     flex-direction: row;
+    justify-content: center;
   }
   .image {
     display: flex;

@@ -35,6 +35,7 @@
     justify-content: center;
     padding: 20px;
     padding-top: 0;
+    margin-top: 50px;
   }
   .footer {
     margin-top: 40px;
@@ -47,9 +48,10 @@
   }
   @media screen and (max-width: 650px) {
     .header {
-      padding-top: 20px;
+      padding: 25px;
       text-align: center;
       font-size: 20px;
+      margin-top: 0px;
     }
   }
 </style>

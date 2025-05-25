@@ -67,14 +67,17 @@
     border: 0;
     border-bottom: 2px solid #b6f2cd;
     width: 300px;
-    color: #fff;
-    opacity: 1 !important;
     font-size: 16px;
     padding: 5px 8px;
     outline: none;
+    color: #b6f2cd;
   }
   input:focus {
     border-bottom-color: #355240;
+  }
+  input::placeholder {
+    color: #355240;
+    opacity: 0.5 !important;
   }
   button {
     background-color: #355240;
